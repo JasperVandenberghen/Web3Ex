@@ -8,7 +8,7 @@
 			<li><a href="Controller?action=Home">Home</a></li>
 			<li><a href="Controller?action=Products">Products</a></li>
 			<li><a href="javascript.html">Javascript</a></li>
-			<li><a href="">Vegetarian Products</a></li>
+			<li><a href="Controller?action=VegetarianProducts">Vegetarian Products</a></li>
 		</ul>
 	</nav>
 </header>

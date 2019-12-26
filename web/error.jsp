@@ -12,8 +12,8 @@
 <main>
     <article>
         <h1>Veggie</h1>
-		<p>Weer een oeps-je-maakte-een-foutje-pagina ...</p>
-
+        <p>${pageContext.exception}</p>
+		<p>Weer een oeps-je-maakte-een-foutje-pagina ...</p>c
     </article>
 </main>
 </body>

@@ -17,12 +17,12 @@
         <p class="error">Some error message</p>
 
             <p>Welcome, //naam gebruiker//</p>
-            <form action="#" method="">
+            <form action="Controller?action=LogOut" method="post">
                 <input type="submit" value="Log Out">
             </form>
 
             <p>Please log in.</p>
-            <form action="#" method="">
+            <form action="Controller?action=LogIn" method="post">
                 <p>Your role:</p>
                 <p class="input">
                     <input type="radio" id="customer" name="role" value="customer" checked>

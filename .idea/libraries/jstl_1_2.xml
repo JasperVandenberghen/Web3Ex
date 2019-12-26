@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="jstl-1.2">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../bestanden_proefexamen/bestanden_proefexamen/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jstl-1.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

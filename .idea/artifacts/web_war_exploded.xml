@@ -8,8 +8,9 @@
           <element id="module-output" name="VandenberghenJasperWeb3" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="postgresql-42.2.5" />
           <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="postgresql-42.2.5" />
+          <element id="library" level="project" name="apache-tomcat-9.0.29-windows-x64" />
         </element>
       </element>
     </root>

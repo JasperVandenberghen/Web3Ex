@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,15 +14,18 @@
 <main>
     <article>
         <h1>Vegetarian products</h1>
+        <c:if test="${vegetarian != null}">
+        <c:forEach items="${vegetarian}" var="v">
         <table>
             <tr>
                 <th>Name</th>
                 <th>Price</th>
             </tr>
                 <tr>
-                    <td>Carot</td>
-                    <td>1.4</td>
-                </tr>
+                    <td><c:out value="${v.name}"/></td>
+                    <td><c:out value="${v.price}"/></td>
+                </tr></c:forEach>
+            </c:if>
         </table>
     </article>
 </main>

@@ -5,10 +5,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class VegetarianProducts extends RequestHandler {
+public class LogOut extends RequestHandler {
     @Override
     public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("vegetarian", getProductService().allVegetarianProducts());
-        request.getRequestDispatcher("vegetarianProducts.jsp").forward(request,response);
+        request.getSession().invalidate();
+        request.getRequestDispatcher("index.jsp").forward(request,response);
     }
 }

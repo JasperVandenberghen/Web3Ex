@@ -10,7 +10,7 @@ import java.util.Properties;
 public class ProductRepositorySQL implements ProductRepository {
 
     private Properties properties = new Properties();
-    private String url = "jdbc:postgresql://databanken.ucll.be:51920/2TX36";
+    private String url = "jdbc:postgresql://databanken.ucll.be:51920/2TX36?currentSchema=r0747180";
 
     public ProductRepositorySQL(Properties properties) {
         this.properties = properties;
@@ -30,9 +30,24 @@ public class ProductRepositorySQL implements ProductRepository {
      */
     @Override
     public Product get(String name) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        Product product = new Product();
+        try(Connection connection = DriverManager.getConnection(url, properties);
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * from veggie where name = ?")) {
+            preparedStatement.setString(1, name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                String nameStr = resultSet.getString("name");
+                String priceStr = resultSet.getString("price");
+                double price = Double.parseDouble(priceStr);
+                String veggieStr = resultSet.getString("vegetarian");
+                boolean veggie = Boolean.parseBoolean(veggieStr);
+               product = new Product(nameStr, price, veggie);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return product;
     }
-
     /**
      * Returns a list with all products
      */
